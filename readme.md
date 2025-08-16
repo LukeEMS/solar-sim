@@ -4,7 +4,7 @@ This repo is to simulate a solar system. I have always been interested in physic
 
 ## Mechanical Solar System Model
 
-![alt text](image.png)
+![alt text](readme_images/image.png)
 
 ## Outcomes
 
