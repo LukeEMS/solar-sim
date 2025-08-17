@@ -8,6 +8,10 @@ class Vector:
         self.x = x
         self.y = y
         self.z = z
+        self.sum = self.__sum()
+        self.magnitude = self.__magnitude()
+        
+    
 
     def __str__(self):
         return f"({self.x},\n{self.y},\n{self.z})"
@@ -29,7 +33,7 @@ class Vector:
         Overload for adding two Vectors. 
         Adds each component of the two Vectors
         """
-        output_vector = Vector( 
+        output_vector = Vector(
             self.x + other_vector.x,
             self.y + other_vector.y,
             self.z + other_vector.z
@@ -78,12 +82,11 @@ class Vector:
         else:
             return False
 
-    def sum(self)->float:
+    def __sum(self)->float:
         return self.x+self.y+self.z
 
-    def magnitude(self)->float:
-        new_vector = self**2
-        total = new_vector.sum()
+    def __magnitude(self)->float:
+        total = (self.x**2) + (self.y**2) + (self.z**2)
         return total**(0.5)
 
     

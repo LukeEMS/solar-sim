@@ -52,15 +52,15 @@ class VectorTests(unittest.TestCase):
 
     def test_sum_of_vector(self):
         vector = Vector(1,2,3)
-        result = vector.sum()
+        result = vector.sum
         self.assertEqual(6,result)
     
     def test_magnitude_of_vector(self):
         vector = Vector(1,2,3)
         square = vector**2
-        total_of_square = square.sum()
+        total_of_square = square.sum
         mag = total_of_square**(0.5)
-        self.assertEqual(mag, vector.magnitude())
+        self.assertEqual(mag, vector.magnitude)
 
 if __name__ == "__main_":
     unittest.main()
