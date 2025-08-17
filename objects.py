@@ -95,7 +95,7 @@ class SolarObject:
                  name:str,
                  mass:float,
                  radius:float,
-                 orbit_rabius:float,
+                 orbit_radius:float,
                  starting_position:Vector):
         self.name = name
         self.mass = mass
