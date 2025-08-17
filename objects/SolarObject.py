@@ -1,3 +1,7 @@
+from objects.Vectors import Vector
+from objects.Constants import GRAVITATIONAL_CONSTANT as g
+from math import pi
+
 class SolarObject:
     def __init__(self,
                  name:str,
@@ -16,8 +20,9 @@ class SolarObject:
     def __str__(self):
         return f"Name: {self.name} Mass: {self.mass}"
 
-    def set_position(self,x,y,z):
+    def set_position(self,x:float,y:float,z:float):
         self.position = Vector(x,y,z)
 
     def gravitational_pull(self,other_object:'SolarObject'):
-        ...
+        diff_vector : Vector = self - other_object
+        force = g * (self.mass*other_object.mass)/(diff_vector.magnitude)

@@ -39,3 +39,10 @@ Bodies are typically tightly bound in terms of its structure, whereas, objects a
 Using Vectors simplifies calculations as rather than considering and performing operations on each x,y,z, you can bundle these dimensions into one Vector and apply operations once.
 
 I have made my own class for a Vector. This will be used to store position, velocities, and acceleration.
+
+### Gravity
+
+Gravity is the force acting on all of the planets in our solar system. Newton's Law of Universal Gravitation states that all objects in the Universe are gravitationally affecting each other. Newton discovered the equation:
+$$F = G \frac{m_1 m_2}{r^2}$$
+
+The equation dictates that the Force $F$ acting on two objects is calculated by the gravitational constant $G$, the mass of the two objects ($m_1$ and $m_2$) and $r$ is the distance between centers of masses (half the total distance).
