@@ -1,5 +1,5 @@
 import unittest
-from objects import Vector
+from objects.Vectors import Vector
 
 
 class VectorTests(unittest.TestCase):
