@@ -34,4 +34,8 @@ It would be first good to get a set of goals out of what I want to achieve for t
 Celestial Objects are naturally occuring physical entities. According to Wikipedia there is a  difference between celestial *bodies* and *objects*.
 Bodies are typically tightly bound in terms of its structure, whereas, objects are perhaps not so. i.e. a Galaxy, star cluster, or solar system would be an Object as it not one physically bound object, but a planet would be a body, as it is a single, tightly bound entity.
 
-Some are much larger than others. The main focus of this project is to simulate our solar system. To break the project down it 
+### Vectors
+
+Using Vectors simplifies calculations as rather than considering and performing operations on each x,y,z, you can bundle these dimensions into one Vector and apply operations once.
+
+I have made my own class for a Vector. This will be used to store position, velocities, and acceleration.

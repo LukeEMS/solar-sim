@@ -10,8 +10,6 @@ class Vector:
         self.z = z
         self.sum = self.__sum()
         self.magnitude = self.__magnitude()
-        
-    
 
     def __str__(self):
         return f"({self.x},\n{self.y},\n{self.z})"
@@ -99,14 +97,14 @@ class SolarObject:
                  mass:float,
                  radius:float,
                  orbit_radius:float,
-                 starting_position:Vector):
+                 starting_position:Vector,
+                 starting_velocity:Vector):
         self.name = name
         self.mass = mass
         self.radius = radius
         self.diameter = 2*radius
         self.volume = (4/3)*pi*(radius**3)
         self.density = self.mass/self.volume
-        self.orbit_radius = orbit_radius
         
     def __str__(self):
         return f"Name: {self.name} Mass: {self.mass}"
