@@ -12,7 +12,7 @@ class Vector:
     def __str__(self):
         return f"({self.x},\n{self.y},\n{self.z})"
     
-    def __sub__(self,other_vector:'Vector'):
+    def __sub__(self,other_vector:'Vector')->'Vector':
         """
         Overload for subtracting two Vectors. 
         Subtracts each component of the two Vectors
@@ -24,7 +24,7 @@ class Vector:
         )
         return output_vector
     
-    def __add__(self,other_vector:'Vector'):
+    def __add__(self,other_vector:'Vector')->'Vector':
         """
         Overload for adding two Vectors. 
         Adds each component of the two Vectors
@@ -36,7 +36,7 @@ class Vector:
         )
         return output_vector
 
-    def __pow__(self,exponent:float):
+    def __pow__(self,exponent:float)->'Vector':
         """
         Overload for raising a Vector to the power. 
         Raise each element to the power of the exponent
@@ -48,7 +48,7 @@ class Vector:
             )
         return output_vector
 
-    def __mul__(self,multiplier:float):
+    def __mul__(self,multiplier:float)->'Vector':
         """
         Overload for multiplying the Vector.
         Multiplys each element by the multiplier
@@ -60,7 +60,7 @@ class Vector:
             )
         return output_vector
 
-    def __truediv__(self,divider:float):
+    def __truediv__(self,divider:float)->'Vector':
         """
         Overload for dividing the Vector.
         Multiplys each element by the divider
@@ -72,11 +72,19 @@ class Vector:
             )
         return output_vector
     
-    def __eq__(self,other_vector:'Vector'):
-        if (self.x==other_vector.x) & (self.y == other_vector.y) & (self.z == other_vector.z):
+    def __eq__(self,other_vector:'Vector')->bool:
+        if ((self.x == other_vector.x) & (self.y == other_vector.y) & (self.z == other_vector.z)):
             return True
         else:
             return False
+
+    def sum(self)->float:
+        return self.x+self.y+self.z
+
+    def magnitude(self)->float:
+        new_vector = self**2
+        total = new_vector.sum()
+        return total**(0.5)
 
     
 class SolarSystem:
@@ -93,9 +101,9 @@ class SolarObject:
         self.mass = mass
         self.radius = radius
         self.diameter = 2*radius
-        self.volume = (4/3)*pi*(radius^3)
+        self.volume = (4/3)*pi*(radius**3)
         self.density = self.mass/self.volume
-        self.orbit_radius = self.orbit_radius
+        self.orbit_radius = orbit_radius
         
     def __str__(self):
         return f"Name: {self.name} Mass: {self.mass}"

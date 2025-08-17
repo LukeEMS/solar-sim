@@ -1,5 +1,5 @@
 import unittest
-from objects import *
+from objects import Vector
 
 
 class VectorTests(unittest.TestCase):
@@ -10,6 +10,13 @@ class VectorTests(unittest.TestCase):
         self.assertEqual(1,vector.x)
         self.assertEqual(2,vector.y)
         self.assertEqual(3,vector.z)
+
+    def test_equality_of_two_vectors(self):
+        vector1 = Vector(1,2,3)
+        vector2 = Vector(1,2,3)
+        # These should return the same
+        self.assertEqual(vector1,vector2)
+        self.assertTrue(vector1==vector2)
 
     def test_subtracting_two_vectors_returns_correct_results(self):
         # Setup
@@ -41,9 +48,21 @@ class VectorTests(unittest.TestCase):
         divider = float(3)
         new_vector : Vector = vector/divider
         # Assert
-        self.assertEqual(2,new_vector.x)
-        self.assertEqual(3,new_vector.y)
-        self.assertEqual(4,new_vector.z)
+        self.assertEqual(Vector(2,3,4),new_vector)
+
+    def test_sum_of_vector(self):
+        vector = Vector(1,2,3)
+        result = vector.sum()
+        self.assertEqual(6,result)
+    
+    def test_magnitude_of_vector(self):
+        vector = Vector(1,2,3)
+        square = vector**2
+        total_of_square = square.sum()
+        mag = total_of_square**(0.5)
+        self.assertEqual(mag, vector.magnitude())
 
 if __name__ == "__main_":
     unittest.main()
+
+    
