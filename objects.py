@@ -1,10 +1,37 @@
 from math import pi
 
 class Vector:
-    def __init__(self,x,y,z):
+    def __init__(self,
+                 x:float,
+                 y:float,
+                 z:float):
         self.x = x
         self.y = y
         self.z = z
+    
+    def __sub__(self,other_vector:'Vector'):
+        """
+        Overload for subtracting two Vectors. 
+        Subtracts each component of the two Vectors
+        """
+        output_vector = Vector(
+            self.x - other_vector.x,
+            self.y - other_vector.y,
+            self.z - other_vector.z
+        )
+        return output_vector
+    
+    def __add__(self,other_vector:'Vector'):
+        """
+        Overload for adding two Vectors. 
+        Adds each component of the two Vectors
+        """
+        output_vector = Vector( 
+            self.x + other_vector.x,
+            self.y + other_vector.y,
+            self.z + other_vector.z
+        )
+        return output_vector
     
 class SolarSystem:
     def __init__(self):
@@ -25,8 +52,8 @@ class SolarObject:
         self.orbit_radius = self.orbit_radius
         
     def __str__(self):
-        return f"Name: {self.name} Mass: {self.mass}" 
-    
+        return f"Name: {self.name} Mass: {self.mass}"
+
     def set_position(self,x,y,z):
         self.position = Vector(x,y,z)
 
