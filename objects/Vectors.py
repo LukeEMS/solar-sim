@@ -65,7 +65,7 @@ class Vector:
                 self.x*multiplier.x,
                 self.y*multiplier.y,
                 self.z*multiplier.z
-                ) 
+                )
         
         return output_vector
 
