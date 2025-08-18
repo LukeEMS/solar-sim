@@ -48,16 +48,25 @@ class Vector:
             )
         return output_vector
 
-    def __mul__(self,multiplier:float)->'Vector':
+    def __mul__(self,multiplier:float|int|'Vector')->'Vector':
         """
         Overload for multiplying the Vector.
         Multiplys each element by the multiplier
         """
-        output_vector = Vector(
-            self.x*multiplier,
-            self.y*multiplier,
-            self.z*multiplier
-            )
+        if isinstance(multiplier,(float,int)):
+                
+            output_vector = Vector(
+                self.x*multiplier,
+                self.y*multiplier,
+                self.z*multiplier
+                )
+        else:
+            output_vector = Vector(
+                self.x*multiplier.x,
+                self.y*multiplier.y,
+                self.z*multiplier.z
+                ) 
+        
         return output_vector
 
     def __truediv__(self,divider:float)->'Vector':
