@@ -1,3 +1,4 @@
+from typing import Union
 class Vector:
     def __init__(self,
                  x:float,
@@ -48,7 +49,7 @@ class Vector:
             )
         return output_vector
 
-    def __mul__(self,multiplier:float|int|'Vector')->'Vector':
+    def __mul__(self,multiplier:Union[float,int,'Vector'])->'Vector':
         """
         Overload for multiplying the Vector.
         Multiplys each element by the multiplier
