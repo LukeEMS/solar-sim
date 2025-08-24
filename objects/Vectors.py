@@ -48,6 +48,7 @@ class Vector:
             self.z**exponent
             )
         return output_vector
+    
 
     def __mul__(self,multiplier:Union[float,int,'Vector'])->'Vector':
         """
@@ -70,16 +71,23 @@ class Vector:
         
         return output_vector
 
-    def __truediv__(self,divider:float)->'Vector':
+    def __truediv__(self,divider:Union[float,int,'Vector'])->'Vector':
         """
         Overload for dividing the Vector.
         Multiplys each element by the divider
         """
-        output_vector = Vector(
-            self.x/divider,
-            self.y/divider,
-            self.z/divider
+        if isinstance(divider,Union[float,int]):
+            output_vector = Vector(
+                self.x/divider,
+                self.y/divider,
+                self.z/divider
             )
+        else:
+            output_vector = Vector(
+                self.x/divider.x,
+                self.y/divider.y,
+                self.z/divider.z
+                )
         return output_vector
     
     def __eq__(self,other_vector:'Vector')->bool:
